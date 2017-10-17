@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://camera.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 77.3795, 30.6222 )
+MOVE_SPEED = 3
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 16, 16 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -196603, 0, -196602, 1, -196601, 1, -196600, 1, -196599, 2, -1, 0, -65536, 1, -65535, 1, -65534, 1, -65533, 2, 131079, 0, 131080, 1, 131081, 1, 131082, 2, 262145, 0, 262146, 1, 262147, 1, 262148, 2, 720893, 0, 720894, 1, 720895, 1, 655360, 1, 655361, 1, 655362, 1, 655363, 1, 655364, 1, 655365, 1, 655366, 2, 1572848, 1, 1572849, 1, 1572850, 1, 1572851, 1, 1572852, 1, 1572853, 1, 1572854, 1, 1572855, 1, 1572856, 1, 1572857, 1, 1572858, 1, 1572859, 1, 1572860, 1, 1572861, 1, 1572862, 1, 1572863, 1, 1507328, 1, 1507329, 1, 1507330, 1, 1507331, 1, 1507332, 1, 1507333, 1, 1507334, 1, 1507335, 1, 1507336, 1, 1507337, 1, 1507338, 1, 1507339, 1, 1507340, 1, 1507341, 1, 1507342, 1, 1507343, 1, 1507344, 1, 1507345, 1, 1507346, 1, 1507347, 1, 1507348, 1, 1507349, 1, 1507350, 1, 1507351, 1, 1507352, 1, 1507353, 1, 1507354, 1, 1507355, 1, 1507356, 1, 1507357, 1, 1507358, 1, 1507359, 1, 1507360, 1, 1507361, 1, 1507362, 1, 1507363, 1, 1507364, 1, 1507365, 1, 1507366, 1, 1507367, 1, 1507368, 1, 1507369, 1, 1507370, 1, 1507371, 1, 1507372, 1, 1507373, 1, 1507374, 1, 1507375, 1, 1507376, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+offset = Vector2( 0, -10 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = false
+drag_margin/v_enabled = false
+smoothing/enable = false
+smoothing/speed = 0.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+script/script = ExtResource( 3 )
+target = "../Player"
+forward_offset = 50
+min_x_offset = 60
+max_y_offset = 5
+x_smoothing = 0.05
+y_smoothing = 0.1
+
+
